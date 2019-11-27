@@ -673,36 +673,36 @@ void driver::end_scan() {
 
 在shell中输入`make run FILE=test01`，程序会启动并对`tests/test01.pcat`进行语法分析，然后打印出语法树，结果如下图所示：
 
-<img src="01.png" alt="image-20191120172113067" style="zoom:80%;" />
+<img src="img/01.png" alt="image-20191120172113067" style="zoom:80%;" />
 
 ### 包含语法错误的情况
 
 1. `test19.pcat`中第10行的`WHILE`语句结束位置缺了一个分号，对此文件进行语法分析，程序运行结果如下图所示：
 
-<img src="02.png" alt="image-20191120181818284" style="zoom:80%;" />
+<img src="img/02.png" alt="image-20191120181818284" style="zoom:80%;" />
 
 2. PCAT指南中要求，变量声明必须带有初始值，这里把`test01.pcat`中第5行的声明的初始值去掉，程序运行结果如下图所示：
 
-   <img src="03.png" alt="image-20191120182924342" style="zoom:80%;" />
+   <img src="img/03.png" alt="image-20191120182924342" style="zoom:80%;" />
 
 3. 将`test01.pcat`中第5行的声明的初始值改为`11111111111111111111`，这个值超过了PCAT允许的整数的范围，会导致整数溢出错误，程序运行结果如下图所示：
 
-   <img src="04.png" alt="image-20191120183531922" style="zoom:80%;" />
+   <img src="img/04.png" alt="image-20191120183531922" style="zoom:80%;" />
 
 4. 将`test01.pcat`中第9行的字符串的后一个引号去掉，产生“未结束的字符串”的错误：
 
-   <img src="05.png" alt="image-20191120184354371" style="zoom:80%;" />
+   <img src="img/05.png" alt="image-20191120184354371" style="zoom:80%;" />
 
 5. 将`test01.pcat`中第3行的`*)`去掉，产生“未结束的注释”的错误：
 
-   <img src="06.png" style="zoom:80%;" />
+   <img src="img/06.png" style="zoom:80%;" />
    
 6. 将`test16.pact`中第24行的`IF`语句的条件改为`I <= 0 <= J`，由于PCAT中比较运算符不能连续使用，所以会报错：
 
-   <img src="D:\courses\compile\pj2\07.png" alt="image-20191120210029937" style="zoom:80%;" />
+   <img src="img/07.png" alt="image-20191120210029937" style="zoom:80%;" />
 
    不过如果把`IF`的条件改为`(I <= 0) <= J`则是符合语法要求的，会正常生成语法树：
 
-   <img src="D:\courses\compile\pj2\08.png" alt="image-20191120210209917" style="zoom:80%;" />
+   <img src="img/08.png" alt="image-20191120210209917" style="zoom:80%;" />
 
    
