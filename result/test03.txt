@@ -1,0 +1,111 @@
+./_pcat_parser tests/test03.pcat
+program body (2,11-18,4)
+  declarations (2,11-4,29)
+    var-decl (3,9-3,28)
+      identifier: A (3,9-3,10)
+      identifier: B (3,12-3,13)
+      type (3,16-3,20)
+        identifier: REAL (3,16-3,20)
+      init value
+        REAL: 0.0 (3,24-3,27)
+    var-decl (4,9-4,29)
+      identifier: I (4,9-4,10)
+      identifier: J (4,12-4,13)
+      type (4,16-4,23)
+        identifier: INTEGER (4,16-4,23)
+      init value
+        INTEGER: 0 (4,27-4,28)
+  statements (6,5-16,41)
+    assignment statement (6,5-6,14)
+      l-value: id-access (6,5-6,6)
+        identifier: A (6,5-6,6)
+      expression
+        REAL: 5.0 (6,10-6,13)
+    assignment statement (7,5-7,13)
+      l-value: id-access (7,5-7,6)
+        identifier: I (7,5-7,6)
+      expression
+        unary-op (7,10-7,12)
+          op: -
+          INTEGER: 3 (7,11-7,12)
+    assignment statement (8,5-8,17)
+      l-value: id-access (8,5-8,6)
+        identifier: J (8,5-8,6)
+      expression
+        binary-op (8,10-8,16)
+          l-value: id-access (8,10-8,11)
+            identifier: I (8,10-8,11)
+          op: *
+          INTEGER: 10 (8,14-8,16)
+    assignment statement (9,5-9,16)
+      l-value: id-access (9,5-9,6)
+        identifier: B (9,5-9,6)
+      expression
+        binary-op (9,10-9,15)
+          l-value: id-access (9,10-9,11)
+            identifier: A (9,10-9,11)
+          op: +
+          l-value: id-access (9,14-9,15)
+            identifier: I (9,14-9,15)
+    assignment statement (10,5-10,16)
+      l-value: id-access (10,5-10,6)
+        identifier: A (10,5-10,6)
+      expression
+        binary-op (10,10-10,15)
+          l-value: id-access (10,10-10,11)
+            identifier: J (10,10-10,11)
+          op: /
+          l-value: id-access (10,14-10,15)
+            identifier: B (10,14-10,15)
+    assignment statement (11,5-11,16)
+      l-value: id-access (11,5-11,6)
+        identifier: J (11,5-11,6)
+      expression
+        binary-op (11,10-11,15)
+          l-value: id-access (11,10-11,11)
+            identifier: I (11,10-11,11)
+          op: -
+          l-value: id-access (11,14-11,15)
+            identifier: J (11,14-11,15)
+    assignment statement (12,5-12,16)
+      l-value: id-access (12,5-12,6)
+        identifier: I (12,5-12,6)
+      expression
+        binary-op (12,10-12,15)
+          l-value: id-access (12,10-12,11)
+            identifier: J (12,10-12,11)
+          op: /
+          l-value: id-access (12,14-12,15)
+            identifier: I (12,14-12,15)
+    assignment statement (13,5-13,16)
+      l-value: id-access (13,5-13,6)
+        identifier: B (13,5-13,6)
+      expression
+        binary-op (13,10-13,15)
+          l-value: id-access (13,10-13,11)
+            identifier: I (13,10-13,11)
+          op: -
+          l-value: id-access (13,14-13,15)
+            identifier: B (13,14-13,15)
+    write statement (14,5-14,40)
+        string: " A = " (14,13-14,20)
+      expression: 
+        unary-op (14,22-14,24)
+          op: -
+          l-value: id-access (14,23-14,24)
+            identifier: A (14,23-14,24)
+        string: " | B = " (14,26-14,35)
+      expression: 
+        l-value: id-access (14,37-14,38)
+          identifier: B (14,37-14,38)
+    write statement (15,5-15,18)
+        string: "" (15,13-15,15)
+    write statement (16,5-16,41)
+        string: " I = " (16,13-16,20)
+      expression: 
+        l-value: id-access (16,22-16,23)
+          identifier: I (16,22-16,23)
+        string: " |  J = " (16,25-16,35)
+      expression: 
+        l-value: id-access (16,37-16,38)
+          identifier: J (16,37-16,38)

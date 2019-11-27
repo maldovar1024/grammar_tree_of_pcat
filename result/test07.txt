@@ -1,0 +1,79 @@
+./_pcat_parser tests/test07.pcat
+program body (3,11-20,4)
+  declarations (3,11-4,28)
+    var-decl (4,9-4,28)
+      identifier: I (4,9-4,10)
+      identifier: J (4,11-4,12)
+      type (4,15-4,22)
+        identifier: INTEGER (4,15-4,22)
+      init value
+        INTEGER: 0 (4,26-4,27)
+  statements (6,2-19,13)
+    write statement (6,2-6,27)
+        string: "Ascending loop:" (6,8-6,25)
+    for statement (7,2-9,13)
+      identifier
+        identifier: I (7,6-7,7)
+      expression1
+        INTEGER: 1 (7,11-7,12)
+      expression2
+        INTEGER: 5 (7,16-7,17)
+      statements (8,4-8,21)
+        write statement (8,4-8,21)
+            string: "I = " (8,10-8,16)
+          expression: 
+            l-value: id-access (8,18-8,19)
+              identifier: I (8,18-8,19)
+    write statement (10,2-10,28)
+        string: "Descending loop:" (10,8-10,26)
+    for statement (11,2-13,13)
+      identifier
+        identifier: I (11,6-11,7)
+      expression1
+        INTEGER: 5 (11,11-11,12)
+      expression2
+        INTEGER: 1 (11,16-11,17)
+      expression3
+        unary-op (11,21-11,23)
+          op: -
+          INTEGER: 1 (11,22-11,23)
+      statements (12,4-12,21)
+        write statement (12,4-12,21)
+            string: "I = " (12,10-12,16)
+          expression: 
+            l-value: id-access (12,18-12,19)
+              identifier: I (12,18-12,19)
+    write statement (14,2-14,24)
+        string: "Double loop:" (14,8-14,22)
+    for statement (15,2-19,13)
+      identifier
+        identifier: I (15,6-15,7)
+      expression1
+        INTEGER: 1 (15,11-15,12)
+      expression2
+        INTEGER: 5 (15,16-15,17)
+      statements (16,6-18,15)
+        for statement (16,6-18,15)
+          identifier
+            identifier: J (16,10-16,11)
+          expression1
+            l-value: id-access (16,15-16,16)
+              identifier: I (16,15-16,16)
+          expression2
+            binary-op (16,20-16,24)
+              l-value: id-access (16,20-16,21)
+                identifier: I (16,20-16,21)
+              op: +
+              INTEGER: 10 (16,22-16,24)
+          expression3
+            INTEGER: 2 (16,28-16,29)
+          statements (17,8-17,36)
+            write statement (17,8-17,36)
+                string: "I,J = " (17,14-17,22)
+              expression: 
+                l-value: id-access (17,24-17,25)
+                  identifier: I (17,24-17,25)
+                string: ", " (17,27-17,31)
+              expression: 
+                l-value: id-access (17,33-17,34)
+                  identifier: J (17,33-17,34)

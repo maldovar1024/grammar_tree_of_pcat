@@ -1,0 +1,65 @@
+./_pcat_parser tests/test08.pcat
+program body (3,11-14,4)
+  declarations (3,11-10,23)
+    procedure-decl (4,15-9,11)
+      procedure name
+        identifier: FOO (4,15-4,18)
+      parameters
+        identifier: X (4,19-4,20)
+        type (4,22-4,25)
+          identifier: INT (4,22-4,25)
+        identifier: Y (4,27-4,28)
+        type (4,30-4,34)
+          identifier: REAL (4,30-4,34)
+      return-type
+        type (4,36-4,40)
+          identifier: REAL (4,36-4,40)
+      procedure body (4,43-9,10)
+        declarations (4,43-5,50)
+          procedure-decl (5,17-5,50)
+            procedure name
+              identifier: BAR (5,17-5,20)
+            no parameters
+            procedure body (5,25-5,49)
+              statements (5,32-5,45)
+                assignment statement (5,32-5,45)
+                  l-value: id-access (5,32-5,33)
+                    identifier: Y (5,32-5,33)
+                  expression
+                    binary-op (5,37-5,44)
+                      l-value: id-access (5,37-5,38)
+                        identifier: X (5,37-5,38)
+                      op: +
+                      REAL: 1.0 (5,41-5,44)
+        statements (7,9-8,11)
+          procedure-call (7,9-7,14)
+            procedure name
+              identifier: BAR (7,9-7,12)
+            no arguments
+          return-statement (8,2-8,11)
+            expression
+              l-value: id-access (8,9-8,10)
+                identifier: Y (8,9-8,10)
+    var-decl (10,9-10,23)
+      identifier: C (10,9-10,10)
+      type (10,13-10,17)
+        identifier: REAL (10,13-10,17)
+      init value
+        INTEGER: 0 (10,21-10,22)
+  statements (12,5-13,42)
+    assignment statement (12,5-12,22)
+      l-value: id-access (12,5-12,6)
+        identifier: C (12,5-12,6)
+      expression
+        procedure-call (12,10-12,21)
+          procedure name
+            identifier: FOO (12,10-12,13)
+          arguments
+            INTEGER: 3 (12,14-12,15)
+            REAL: 2.0 (12,17-12,20)
+    write statement (13,5-13,42)
+        string: "C = " (13,11-13,17)
+      expression: 
+        l-value: id-access (13,19-13,20)
+          identifier: C (13,19-13,20)
+        string: " (should be 4.0)" (13,22-13,40)

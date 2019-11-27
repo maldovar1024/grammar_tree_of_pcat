@@ -1,0 +1,53 @@
+./_pcat_parser tests/test12.pcat
+program body (4,11-15,4)
+  declarations (4,11-9,52)
+    var-decl (5,9-5,26)
+      identifier: I (5,9-5,10)
+      type (5,13-5,20)
+        identifier: INTEGER (5,13-5,20)
+      init value
+        INTEGER: 0 (5,24-5,25)
+    procedure-decl (6,15-8,9)
+      procedure name
+        identifier: ADDONE (6,15-6,21)
+      no parameters
+      procedure body (6,26-8,8)
+        statements (7,2-7,13)
+          assignment statement (7,2-7,13)
+            l-value: id-access (7,2-7,3)
+              identifier: I (7,2-7,3)
+            expression
+              binary-op (7,7-7,12)
+                l-value: id-access (7,7-7,8)
+                  identifier: I (7,7-7,8)
+                op: +
+                INTEGER: 1 (7,11-7,12)
+    procedure-decl (9,15-9,52)
+      procedure name
+        identifier: PASSTHEBUCK (9,15-9,26)
+      no parameters
+      procedure body (9,31-9,51)
+        statements (9,38-9,47)
+          procedure-call (9,38-9,46)
+            procedure name
+              identifier: ADDONE (9,38-9,44)
+            no arguments
+  statements (11,5-14,24)
+    write statement (11,5-11,40)
+        string: "I = " (11,11-11,17)
+      expression: 
+        l-value: id-access (11,19-11,20)
+          identifier: I (11,19-11,20)
+        string: " (SHOULD BE 0)" (11,22-11,38)
+    procedure-call (12,5-12,18)
+      procedure name
+        identifier: PASSTHEBUCK (12,5-12,16)
+      no arguments
+    write statement (13,5-13,40)
+        string: "I = " (13,11-13,17)
+      expression: 
+        l-value: id-access (13,19-13,20)
+          identifier: I (13,19-13,20)
+        string: " (SHOULD BE 1)" (13,22-13,38)
+    write statement (14,5-14,24)
+        string: "ALL DONE!" (14,11-14,22)

@@ -1,0 +1,84 @@
+./_pcat_parser tests/test02.pcat
+program body (3,11-14,4)
+  declarations (3,11-5,21)
+    var-decl (4,9-4,28)
+      identifier: A (4,9-4,10)
+      identifier: B (4,12-4,13)
+      type (4,16-4,20)
+        identifier: REAL (4,16-4,20)
+      init value
+        REAL: 0.0 (4,24-4,27)
+    var-decl (5,5-5,21)
+      identifier: C (5,5-5,6)
+      type (5,9-5,13)
+        identifier: REAL (5,9-5,13)
+      init value
+        REAL: 0.0 (5,17-5,20)
+  statements (7,5-13,26)
+    write statement (7,5-7,32)
+        string: "ENTER TWO REALS:" (7,12-7,30)
+    read statement (8,5-8,17)
+      l-value: id-access (8,11-8,12)
+        identifier: A (8,11-8,12)
+      l-value: id-access (8,14-8,15)
+        identifier: B (8,14-8,15)
+    assignment statement (9,5-9,14)
+      l-value: id-access (9,5-9,6)
+        identifier: C (9,5-9,6)
+      expression
+        REAL: 8.0 (9,10-9,13)
+    write statement (10,5-10,43)
+        string: "A=" (10,12-10,16)
+      expression: 
+        l-value: id-access (10,18-10,19)
+          identifier: A (10,18-10,19)
+        string: ", B=" (10,21-10,27)
+      expression: 
+        l-value: id-access (10,29-10,30)
+          identifier: B (10,29-10,30)
+        string: ", C=" (10,32-10,38)
+      expression: 
+        l-value: id-access (10,40-10,41)
+          identifier: C (10,40-10,41)
+    assignment statement (11,5-11,23)
+      l-value: id-access (11,5-11,6)
+        identifier: C (11,5-11,6)
+      expression
+        binary-op (11,10-11,22)
+          binary-op (11,10-11,18)
+            l-value: id-access (11,10-11,11)
+              identifier: A (11,10-11,11)
+            op: -
+            unary-op (11,15-11,17)
+              op: -
+              l-value: id-access (11,16-11,17)
+                identifier: B (11,16-11,17)
+          op: +
+          l-value: id-access (11,21-11,22)
+            identifier: C (11,21-11,22)
+    assignment statement (12,5-12,20)
+      l-value: id-access (12,5-12,6)
+        identifier: C (12,5-12,6)
+      expression
+        binary-op (12,10-12,19)
+          binary-op (12,10-12,15)
+            l-value: id-access (12,10-12,11)
+              identifier: C (12,10-12,11)
+            op: *
+            l-value: id-access (12,14-12,15)
+              identifier: A (12,14-12,15)
+          op: +
+          INTEGER: 1 (12,18-12,19)
+    write statement (13,5-13,26)
+      expression: 
+        binary-op (13,13-13,24)
+          unary-op (13,13-13,15)
+            op: -
+            l-value: id-access (13,14-13,15)
+              identifier: C (13,14-13,15)
+          op: /
+          binary-op (13,18-13,23)
+            l-value: id-access (13,18-13,19)
+              identifier: A (13,18-13,19)
+            op: +
+            INTEGER: 1 (13,22-13,23)

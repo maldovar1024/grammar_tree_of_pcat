@@ -1,0 +1,241 @@
+./_pcat_parser tests/test05.pcat
+program body (3,11-33,4)
+  declarations (3,11-12,9)
+    var-decl (4,9-4,26)
+      identifier: I (4,9-4,10)
+      type (4,13-4,20)
+        identifier: INTEGER (4,13-4,20)
+      init value
+        INTEGER: 0 (4,24-4,25)
+    type-decl (5,10-5,51)
+      type name
+        identifier: COMPLEX (5,10-5,17)
+      record-component
+        identifier: R (5,28-5,29)
+        type (5,31-5,35)
+          identifier: REAL (5,31-5,35)
+        identifier: I (5,37-5,38)
+        type (5,41-5,45)
+          identifier: REAL (5,41-5,45)
+    type-decl (6,10-6,63)
+      type name
+        identifier: PAIR (6,10-6,14)
+      record-component
+        identifier: FIRST (6,25-6,30)
+        type (6,32-6,39)
+          identifier: COMPLEX (6,32-6,39)
+        identifier: SECOND (6,41-6,47)
+        type (6,50-6,57)
+          identifier: COMPLEX (6,50-6,57)
+    var-decl (7,9-7,55)
+      identifier: C (7,9-7,10)
+      type (7,13-7,20)
+        identifier: COMPLEX (7,13-7,20)
+      init value
+        comp-construction (7,24-7,54)
+          identifier: COMPLEX (7,24-7,31)
+          component
+            identifier: R (7,34-7,35)
+            REAL: 0.0 (7,39-7,42)
+          component
+            identifier: I (7,44-7,45)
+            REAL: 0.0 (7,49-7,52)
+    var-decl (8,9-9,71)
+      identifier: P (8,9-8,10)
+      type (8,13-8,17)
+        identifier: PAIR (8,13-8,17)
+      init value
+        comp-construction (8,21-9,70)
+          identifier: PAIR (8,21-8,25)
+          component
+            identifier: FIRST (8,28-8,33)
+            comp-construction (8,37-8,67)
+              identifier: COMPLEX (8,37-8,44)
+              component
+                identifier: R (8,47-8,48)
+                REAL: 0.0 (8,52-8,55)
+              component
+                identifier: I (8,57-8,58)
+                REAL: 0.0 (8,62-8,65)
+          component
+            identifier: SECOND (9,28-9,34)
+            comp-construction (9,38-9,68)
+              identifier: COMPLEX (9,38-9,45)
+              component
+                identifier: R (9,48-9,49)
+                REAL: 0.0 (9,53-9,56)
+              component
+                identifier: I (9,58-9,59)
+                REAL: 0.0 (9,63-9,66)
+    procedure-decl (10,15-12,9)
+      procedure name
+        identifier: PRINT (10,15-10,20)
+      no parameters
+      procedure body (10,25-12,8)
+        statements (11,2-11,38)
+          write statement (11,2-11,38)
+              string: "    (" (11,8-11,15)
+            expression: 
+              l-value: record-access (11,17-11,20)
+                record
+                  l-value: id-access (11,17-11,18)
+                    identifier: C (11,17-11,18)
+                member
+                  identifier: R (11,19-11,20)
+              string: ", " (11,22-11,26)
+            expression: 
+              l-value: record-access (11,28-11,31)
+                record
+                  l-value: id-access (11,28-11,29)
+                    identifier: C (11,28-11,29)
+                member
+                  identifier: I (11,30-11,31)
+              string: ")" (11,33-11,36)
+  statements (14,5-32,9)
+    assignment statement (14,5-14,16)
+      l-value: record-access (14,5-14,8)
+        record
+          l-value: id-access (14,5-14,6)
+            identifier: C (14,5-14,6)
+        member
+          identifier: R (14,7-14,8)
+      expression
+        REAL: 1.0 (14,12-14,15)
+    assignment statement (15,5-15,16)
+      l-value: record-access (15,5-15,8)
+        record
+          l-value: id-access (15,5-15,6)
+            identifier: C (15,5-15,6)
+        member
+          identifier: I (15,7-15,8)
+      expression
+        REAL: 0.0 (15,12-15,15)
+    assignment statement (16,5-16,18)
+      l-value: record-access (16,5-16,12)
+        record
+          l-value: id-access (16,5-16,6)
+            identifier: P (16,5-16,6)
+        member
+          identifier: FIRST (16,7-16,12)
+      expression
+        l-value: id-access (16,16-16,17)
+          identifier: C (16,16-16,17)
+    assignment statement (17,5-17,16)
+      l-value: record-access (17,5-17,8)
+        record
+          l-value: id-access (17,5-17,6)
+            identifier: C (17,5-17,6)
+        member
+          identifier: R (17,7-17,8)
+      expression
+        REAL: 0.0 (17,12-17,15)
+    assignment statement (18,5-18,16)
+      l-value: record-access (18,5-18,8)
+        record
+          l-value: id-access (18,5-18,6)
+            identifier: C (18,5-18,6)
+        member
+          identifier: I (18,7-18,8)
+      expression
+        REAL: 1.0 (18,12-18,15)
+    assignment statement (19,5-19,19)
+      l-value: record-access (19,5-19,13)
+        record
+          l-value: id-access (19,5-19,6)
+            identifier: P (19,5-19,6)
+        member
+          identifier: SECOND (19,7-19,13)
+      expression
+        l-value: id-access (19,17-19,18)
+          identifier: C (19,17-19,18)
+    assignment statement (20,5-20,18)
+      l-value: id-access (20,5-20,6)
+        identifier: C (20,5-20,6)
+      expression
+        l-value: record-access (20,10-20,17)
+          record
+            l-value: id-access (20,10-20,11)
+              identifier: P (20,10-20,11)
+          member
+            identifier: FIRST (20,12-20,17)
+    write statement (21,5-21,62)
+        string: "The first complex number should be (1.0, 0.0):" (21,12-21,60)
+    procedure-call (22,5-22,12)
+      procedure name
+        identifier: PRINT (22,5-22,10)
+      no arguments
+    assignment statement (23,5-23,19)
+      l-value: id-access (23,5-23,6)
+        identifier: C (23,5-23,6)
+      expression
+        l-value: record-access (23,10-23,18)
+          record
+            l-value: id-access (23,10-23,11)
+              identifier: P (23,10-23,11)
+          member
+            identifier: SECOND (23,12-23,18)
+    write statement (24,5-24,63)
+        string: "The second complex number should be (0.0, 1.0):" (24,12-24,61)
+    procedure-call (25,5-25,12)
+      procedure name
+        identifier: PRINT (25,5-25,10)
+      no arguments
+    if-statement (26,5-32,9)
+      if-part
+        condition
+          binary-op (26,8-26,31)
+            l-value: record-access (26,8-26,17)
+              record
+                l-value: record-access (26,8-26,15)
+                  record
+                    l-value: id-access (26,8-26,9)
+                      identifier: P (26,8-26,9)
+                  member
+                    identifier: FIRST (26,10-26,15)
+              member
+                identifier: R (26,16-26,17)
+            op: <>
+            l-value: record-access (26,21-26,31)
+              record
+                l-value: record-access (26,21-26,29)
+                  record
+                    l-value: id-access (26,21-26,22)
+                      identifier: P (26,21-26,22)
+                  member
+                    identifier: SECOND (26,23-26,29)
+              member
+                identifier: R (26,30-26,31)
+        statements (27,2-27,57)
+          write statement (27,2-27,57)
+              string: "and these two complex numbers are not equal!" (27,9-27,55)
+      elsif-part
+        condition
+          binary-op (28,11-28,34)
+            l-value: record-access (28,11-28,20)
+              record
+                l-value: record-access (28,11-28,18)
+                  record
+                    l-value: id-access (28,11-28,12)
+                      identifier: P (28,11-28,12)
+                  member
+                    identifier: FIRST (28,13-28,18)
+              member
+                identifier: I (28,19-28,20)
+            op: <>
+            l-value: record-access (28,24-28,34)
+              record
+                l-value: record-access (28,24-28,32)
+                  record
+                    l-value: id-access (28,24-28,25)
+                      identifier: P (28,24-28,25)
+                  member
+                    identifier: SECOND (28,26-28,32)
+              member
+                identifier: I (28,33-28,34)
+        statements (29,2-29,57)
+          write statement (29,2-29,57)
+              string: "and these two complex numbers are not equal!" (29,9-29,55)
+      else-part
+        statements (31,2-31,53)
+          write statement (31,2-31,53)
+              string: "and these two complex numbers are equal?" (31,9-31,51)

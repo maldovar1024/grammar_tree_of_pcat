@@ -1,0 +1,147 @@
+./_pcat_parser tests/test17.pcat
+program body (4,11-33,4)
+  declarations (4,11-23,9)
+    var-decl (5,9-5,34)
+      identifier: I (5,9-5,10)
+      identifier: ANSWER (5,12-5,18)
+      type (5,21-5,28)
+        identifier: INTEGER (5,21-5,28)
+      init value
+        INTEGER: 0 (5,32-5,33)
+    procedure-decl (6,15-23,9)
+      procedure name
+        identifier: FACTORIAL (6,15-6,24)
+      no parameters
+      procedure body (6,29-23,8)
+        declarations (6,29-18,8)
+          var-decl (7,6-7,23)
+            identifier: J (7,6-7,7)
+            type (7,10-7,17)
+              identifier: INTEGER (7,10-7,17)
+            init value
+              INTEGER: 0 (7,21-7,22)
+          procedure-decl (9,11-11,8)
+            procedure name
+              identifier: FACT (9,11-9,15)
+            no parameters
+            procedure body (9,20-11,7)
+              statements (10,6-10,53)
+                if-statement (10,6-10,53)
+                  if-part
+                    condition
+                      binary-op (10,9-10,15)
+                        l-value: id-access (10,9-10,10)
+                          identifier: J (10,9-10,10)
+                        op: <=
+                        l-value: id-access (10,14-10,15)
+                          identifier: I (10,14-10,15)
+                    statements (10,21-10,48)
+                      procedure-call (10,21-10,27)
+                        procedure name
+                          identifier: MULT (10,21-10,25)
+                        no arguments
+                      assignment statement (10,29-10,40)
+                        l-value: id-access (10,29-10,30)
+                          identifier: J (10,29-10,30)
+                        expression
+                          binary-op (10,34-10,39)
+                            l-value: id-access (10,34-10,35)
+                              identifier: J (10,34-10,35)
+                            op: +
+                            INTEGER: 1 (10,38-10,39)
+                      procedure-call (10,41-10,47)
+                        procedure name
+                          identifier: FACT (10,41-10,45)
+                        no arguments
+          procedure-decl (12,4-18,8)
+            procedure name
+              identifier: MULT (12,4-12,8)
+            no parameters
+            procedure body (12,13-18,7)
+              declarations (12,13-13,27)
+                var-decl (13,10-13,27)
+                  identifier: I (13,10-13,11)
+                  type (13,14-13,21)
+                    identifier: INTEGER (13,14-13,21)
+                  init value
+                    INTEGER: 0 (13,25-13,26)
+              statements (15,6-17,25)
+                assignment statement (15,6-15,18)
+                  l-value: id-access (15,6-15,7)
+                    identifier: I (15,6-15,7)
+                  expression
+                    l-value: id-access (15,11-15,17)
+                      identifier: ANSWER (15,11-15,17)
+                assignment statement (16,13-16,24)
+                  l-value: id-access (16,13-16,14)
+                    identifier: I (16,13-16,14)
+                  expression
+                    binary-op (16,18-16,23)
+                      l-value: id-access (16,18-16,19)
+                        identifier: I (16,18-16,19)
+                      op: *
+                      l-value: id-access (16,22-16,23)
+                        identifier: J (16,22-16,23)
+                assignment statement (17,13-17,25)
+                  l-value: id-access (17,13-17,19)
+                    identifier: ANSWER (17,13-17,19)
+                  expression
+                    l-value: id-access (17,23-17,24)
+                      identifier: I (17,23-17,24)
+        statements (20,2-22,9)
+          assignment statement (20,2-20,14)
+            l-value: id-access (20,2-20,8)
+              identifier: ANSWER (20,2-20,8)
+            expression
+              INTEGER: 1 (20,12-20,13)
+          assignment statement (21,2-21,9)
+            l-value: id-access (21,2-21,3)
+              identifier: J (21,2-21,3)
+            expression
+              INTEGER: 1 (21,7-21,8)
+          procedure-call (22,2-22,8)
+            procedure name
+              identifier: FACT (22,2-22,6)
+            no arguments
+  statements (25,5-32,9)
+    write statement (25,5-25,64)
+        string: "The first 5 factorials are (in ascending order):" (25,12-25,62)
+    assignment statement (26,5-26,12)
+      l-value: id-access (26,5-26,6)
+        identifier: I (26,5-26,6)
+      expression
+        INTEGER: 1 (26,10-26,11)
+    loop-statement (27,5-32,9)
+      statements (28,2-31,13)
+        if-statement (28,2-28,26)
+          if-part
+            condition
+              binary-op (28,5-28,10)
+                l-value: id-access (28,5-28,6)
+                  identifier: I (28,5-28,6)
+                op: >
+                INTEGER: 5 (28,9-28,10)
+            statements (28,16-28,21)
+              exit-statement (28,16-28,21)
+        procedure-call (29,9-29,20)
+          procedure name
+            identifier: FACTORIAL (29,9-29,18)
+          no arguments
+        write statement (30,9-30,48)
+            string: "FACTORIAL(" (30,15-30,27)
+          expression: 
+            l-value: id-access (30,29-30,30)
+              identifier: I (30,29-30,30)
+            string: ") = " (30,32-30,38)
+          expression: 
+            l-value: id-access (30,40-30,46)
+              identifier: ANSWER (30,40-30,46)
+        assignment statement (31,2-31,13)
+          l-value: id-access (31,2-31,3)
+            identifier: I (31,2-31,3)
+          expression
+            binary-op (31,7-31,12)
+              l-value: id-access (31,7-31,8)
+                identifier: I (31,7-31,8)
+              op: +
+              INTEGER: 1 (31,11-31,12)

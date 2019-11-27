@@ -1,0 +1,4 @@
+./_pcat_parser tests/test19.pcat
+tests/test19.pcat:11.5-9: syntax error, unexpected WRITE, expecting ;
+Makefile:33: recipe for target 'run' failed
+make: *** [run] Error 1

@@ -1,0 +1,4 @@
+./_pcat_parser tests/test20.pcat
+tests/test20.pcat:1.31-50: integer out of range
+Makefile:33: recipe for target 'run' failed
+make: *** [run] Error 1

@@ -1,0 +1,6 @@
+*.o
+*.d
+include/location.hh
+include/parser.hh
+src/parser.cc
+src/scanner.cc
